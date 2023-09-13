@@ -1,0 +1,121 @@
+@use "responsive.module.scss";
+@use "attribute.module.scss";
+
+.home {
+    margin-top: 40px;
+    @include responsive.Responsive(sm) {
+        margin-top: 80px;
+    }
+    .home__jumbotron {
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/images/home_jumbotron.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5rem;
+        .home__jumbotron__body {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .home__jumbotron__title {
+            font-weight: bold;
+            @extend .home__jumbotron__body;
+        }
+        .home__jumbotron__btn1 {
+            @include attribute.btn(attribute.$color-industrial-1, attribute.$color-industrial-1-hover)
+        }
+        .home__jumbotron__btn2 {
+            @include attribute.btn(attribute.$color-industrial-2, attribute.$color-industrial-2-hover)
+        }
+
+    }
+
+    .home__service {
+        .home__service__heading {
+            @extend .home__service__subHeading;
+            @extend %section__title;
+        }
+        .home__service__subHeading{
+            margin-top: 2rem;
+        }
+        .home__service__list {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            .home__service__item {
+                position: relative;
+                overflow: hidden;
+                &:hover{
+                    .home__service__item__infoBox {
+                        transform: translateY(0);
+                    }
+                }
+                .home__service__item__mediaBox {
+                    img{
+                        width: 100%;
+                        display: block;
+                    }
+                    
+                }
+                .home__service__item__infoBox {
+                    position: absolute;
+                    left: 40px;
+                    top: 40px;
+                    bottom: 0;
+                    background: rgba(43, 63, 73, 0.9);
+                    padding: 20px;
+                    // height: 100%;
+                    border-left: 0.5rem solid attribute.$color-industrial-2;
+                    transition: all 0.3s ease;
+                    transform: translateY(75%);
+                    color: white;
+                    .home__service__item__infoBox__title {
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-bottom: 1rem;
+                        line-height: 2;
+                    }
+                    .home__service__item__infoBox__link {
+                        color: attribute.$color-industrial-2;
+                        text-decoration: none;
+                        p {
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .home__about {
+        padding: 0 2rem;
+        margin: 3rem 0;
+        .home__about__left {
+            margin: 3rem 0;
+            .home__about__image {
+                width: 100%;
+                display: block;
+            }
+        }
+        .home__about__right {
+            padding-left: 3rem;
+            margin: 3rem 0;
+            .home__about__right__title {
+                font-weight: bold;
+            }
+            .home__about__right__subTitle {
+                margin-top: 2rem;
+            }
+            .home__about__right__body {
+                @extend .home__about__right__subTitle;
+            }
+            .home__about__right__btn {
+                @extend .home__about__right__subTitle;
+                @include attribute.btn(attribute.$color-industrial-2, attribute.$color-industrial-2-hover);
+            }
+        }
+    }
+}

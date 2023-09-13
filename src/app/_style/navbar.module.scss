@@ -1,0 +1,93 @@
+@use "responsive.module.scss";
+@use "attribute.module.scss";
+
+@keyframes slideFromTopLg {
+    0%   {top: -100px}
+    100% {top: -40px}
+}
+
+@keyframes slideFromTop {
+    0%   {top: -100px}
+    100% {top: 0px}
+}
+
+%flex-center-around {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1;
+}
+
+.navbar{
+    background-color: white;
+    .navbar__1 {
+        @extend %flex-center-around;
+        display: none;
+        background-color: attribute.$color-industrial-1;
+        .navbar__socialBtn {
+            border-radius: 0;
+            .navbar__icon {
+                color: white;
+            }
+            &:hover {
+                background-color: white;
+                .navbar__icon {
+                    color: attribute.$color-industrial-1;
+                }
+            }
+        }
+        @include responsive.Responsive(sm) {
+            display: flex;
+        }
+    }
+    .navbar__2 {
+        @extend %flex-center-around;
+        background-color: white;
+        padding: 1rem 0rem;
+        .navbar__logobrand{
+    
+        }
+        .navbar__links {
+            display: none;
+            gap: 1.5rem;
+            a {
+                text-decoration: none;
+                .navbar__link {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+            @include responsive.Responsive(sm) {
+                display: flex;
+            }
+        }
+        .navbar__menuBtn {
+            display: block;
+            @include responsive.Responsive(sm) {
+                display: none;
+            }
+        }
+    }
+}
+
+.drawer {
+    .drawer__top {
+        @extend %flex-center-around;
+        .drawer__closeIcon {
+            font-size: 3rem;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+    .drawer__divider {
+        margin: 1rem 0;
+    }
+}

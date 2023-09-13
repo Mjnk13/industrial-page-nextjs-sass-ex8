@@ -1,0 +1,39 @@
+$color-industrial-1: #2b3f49;
+$color-industrial-1-hover: #182329;
+$color-industrial-2: #ff8800;
+$color-industrial-2-hover: #e67a00;
+
+@mixin btn($bg-color, $bg-color-hover) {
+    padding: 14px 35px;
+    background-color: $bg-color;
+    color: white;
+    &:hover {
+        background-color: $bg-color-hover;
+    }
+}
+%section__title {
+    font-weight: bold;
+    position: relative;
+    padding-left: 30px;
+    line-height: 1.6rem;
+    &::before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 25px;
+        background-color: $color-industrial-1;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 25px;
+        background-color: $color-industrial-2;
+        position: absolute;
+        left: 7px;
+        top: 5px;
+    }
+}
