@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider} from '@mui/material'
 import theme from '@/mui_theme/theme'
 import NavBar from './_component/navbar/NavBar'
+import Footer from './_component/footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Industrial',
@@ -22,8 +23,13 @@ export default function RootLayout({
       </head>
       <body style={{margin: 0}}>
         <ThemeProvider theme={theme}>
-          <NavBar/>
+          <header>
+            <NavBar/>
+          </header>
           {children}
+          <footer>
+            <Footer/>
+          </footer>
         </ThemeProvider>
       </body>
     </html>

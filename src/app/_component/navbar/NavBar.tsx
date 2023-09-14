@@ -36,7 +36,7 @@ interface Props {
 }
 
 function ScrollNavbarHandle(props: Props) {
-    const matches = useMediaQuery(theme.breakpoints.up('lg'));
+    const matches = useMediaQuery(theme.breakpoints.up('md'));
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
     // will default to window.
@@ -51,7 +51,7 @@ function ScrollNavbarHandle(props: Props) {
         elevation: trigger ? 10 : 0,
         style: {
             position: trigger ? "fixed": "absolute",
-            animation: trigger ? `${matches ? style.slideFromTopLg : style.slideFromTop} 200ms 1 forwards` : "",
+            animation: trigger ? `${matches ? style.slideFromTopMd : style.slideFromTop} 200ms 1 forwards` : "",
         }
     });
 }

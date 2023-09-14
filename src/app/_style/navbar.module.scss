@@ -1,7 +1,7 @@
 @use "responsive.module.scss";
 @use "attribute.module.scss";
 
-@keyframes slideFromTopLg {
+@keyframes slideFromTopMd {
     0%   {top: -100px}
     100% {top: -40px}
 }
@@ -42,7 +42,7 @@
                 }
             }
         }
-        @include responsive.Responsive(sm) {
+        @include responsive.Responsive(md) {
             display: flex;
         }
     }
@@ -63,13 +63,13 @@
                     font-weight: bold;
                 }
             }
-            @include responsive.Responsive(sm) {
+            @include responsive.Responsive(md) {
                 display: flex;
             }
         }
         .navbar__menuBtn {
             display: block;
-            @include responsive.Responsive(sm) {
+            @include responsive.Responsive(md) {
                 display: none;
             }
         }
